@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block title%} Home {% endblock %}
+
+{% block body %}
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Home</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+        <meta name="google" content="notranslate" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" />
+	</head>
+	<body>
+
+<!--	navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'LandingPage' %}">Hero</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <span style="color:black; font-size:24px; margin-right:20px; background:cyan; font-weight: bold;">
+                        Hello, {{request.user}}</span>
+                        <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'Signup' %}">Sign Up</a>
+                        </li>
+                        <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'Login' %}">Login</a>
+                        </li>
+                         <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'AboutUs' %}">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+			<section id="banner">
+                <img id="manner_img" src="{% static 'images/banner.jpg' %}" alt="My image"/>
+			</section>
+
+			<section id="one" class="wrapper">
+				<div class="inner">
+					<div class="flex flex-3">
+						<article>
+							<header>
+								<h5>Testers</h5>
+							</header>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis eleifend tempus. Phasellus feugiat tortor placerat ultrices volutpat. Aliquam erat nulla, dictum sed sem nec, blandit vestibulum orci. Nam suscipit consectetur erat, varius varius quam pharetra quis. Pellentesque ut mollis nisi. Curabitur et euismod leo.</p>
+						</article>
+						<article>
+							<header>
+								<h5>Developers</h5>
+							</header>
+							<p>Vestibulum et dui sit amet ipsum iaculis dapibus ut eget dolor. In quis metus id ante suscipit varius. Morbi mollis lacinia tellus, sed varius urna faucibus at. Phasellus at interdum mi. Etiam ut nisi ipsum. Pellentesque risus ligula, sollicitudin vitae felis et, rutrum rutrum leo. Ut egestas orci eu ante euismod pharetra. Maecenas ac orci efficitur est luctus consequat</p>
+						</article>
+						<article>
+							<header>
+								<h5>Data Science</h5>
+							</header>
+							<p>Fusce vel tellus libero. Sed felis mauris, placerat sed finibus a, imperdiet ut sapien. Nulla semper, felis rhoncus bibendum blandit, ligula felis rhoncus lorem, nec maximus nibh nibh sit amet risus. In euismod commodo luctus. Donec viverra elementum nisl, nec volutpat dolor. Praesent consectetur nulla nec imperdiet blandit.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<header>
+						<h2>TESTIMONIALS</h2>
+						<p>ullam eu lorem sed augue consectetur semper. Aenean pretium nisi vitae consequat porttitor. Aenean porta lectus sed magna laoreet, sed maximus justo pellentesque.</p>
+					</header>
+					<div class="flex flex-4">
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static 'images/pic03.jpg' %}" alt="My image"/>
+							</div>
+							<h3>John Doe</h3>
+							<p>Nullam sit amet elit imperdiet, rutrum sem id, luctus eros. Mauris non nibh eu urna elementum porttitor quis et est. Nunc posuere sit amet dui sit amet laoreet</p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static 'images/pic04.jpg' %}" alt="My image"/>
+							</div>
+							<h3>Kofi Kuma</h3>
+							<p>Nunc mollis nisl vitae pellentesque ullamcorper. Suspendisse convallis lorem eu velit tempus malesuada. Vestibulum tincidunt mauris libero, sed molestie eros sollicitudin vitae.</p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static 'images/pic05.jpg' %}" alt="My image">
+							</div>
+							<h3>Kwame Jay</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique dui ligula, sit amet sollicitudin enim varius eu. </p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static 'images/pic06.jpg' %}" alt="My image"/>
+							</div>
+							<h3>Ab3 Kente</h3>
+							<p> Nullam arcu libero, eleifend in lobortis id, malesuada at orci. Cras dapibus nulla ipsum, et blandit magna rutrum nec. Vivamus feugiat, lectus sit amet volutpat finibus, nisl nisi ornare odio</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+<footer class="container-fluid text-center">
+  <p>Copyright @ 2020</p>
+</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+
+</html>
+
+
+
+
+
+{% endblock %}l>

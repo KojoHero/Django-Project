@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@import url(font-awesome.min.css);
+@import "https://fonts.googleapis.com/css?family=Raleway:100,300,600";
+
+/* Containers */
+	.container {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.container {
+		width: 80em;
+	}
+
+	a {
+		color: #5385c1;
+		text-decoration: underline;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #5385c1;
+		font-weight: 300;
+		line-height: 1.5;
+		margin: 0 0 1em 0;
+	}
+	.align-left {
+		text-align: left;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.inner {
+		max-width: 75em;
+		margin: 0 auto;
+	}
+
+/* Section/Article */
+
+	section.special, article.special {
+		text-align: center;
+	}
+
+		section.special article, article.special article {
+			text-align: left;
+		}
+
+	section.wrapper, article.wrapper {
+		padding: 3em 0;
+	}
+
+		section.wrapper header, article.wrapper header {
+			margin-bottom: 2em;
+		}
+
+
+			section.wrapper header p, article.wrapper header p {
+				font-size: 1em;
+			}
+
+		section.wrapper.style1, article.wrapper.style1 {
+			background: #5385c1;
+			color: #bacee6;
+		}
+
+			section.wrapper.style1 header h2, article.wrapper.style1 header h2 {
+				color: #fff;
+			}
+
+			section.wrapper.style1 h3, article.wrapper.style1 h3 {
+				color: #FFF;
+			}
+
+/* Flex */
+
+	.flex {
+		display: -ms-flexbox;
+		-ms-flex-wrap: wrap;
+		-ms-flex-pack: justify;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+	}
+
+
+		.flex.flex-3 article {
+			position: relative;
+			width: 28%;
+		}
+
+			.flex.flex-3 article:before {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				right: -2em;
+				top: 0;
+				border-right: 1px solid #dbdbdb;
+				pointer-events: none;
+			}
+
+			.flex.flex-3 article:last-child:before {
+				border: none;
+			}
+
+		.flex.flex-4 .box {
+			width: 21%;
+		}
+
+/* Box */
+
+	.box {
+		border: solid 1px #dbdbdb;
+		margin-bottom: 2em;
+		padding: 1.5em;
+	}
+
+		.box.person {
+			border: solid 1px rgba(255, 255, 255, 0.25);
+			padding: 3em 1.5em;
+		}
+
+		.box.person .image img {
+			max-width: 100%;
+		}
+
+/* Image */
+
+	.image {
+		border-radius: 0;
+		border: 0;
+		display: inline-block;
+		position: relative;
+	}
+
+		.image.round img {
+			border-radius: 100%;
+		}
+
+/* Banner */
+    #manner_img {
+        width: 100%;
+        height: auto;
+        }
