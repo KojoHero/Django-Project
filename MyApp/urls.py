@@ -1,6 +1,21 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 from . import views
-from .views import Signup, LoginUser, Home, LogoutUser, LandingPage, Datascience, Developers, Testers, ContactUs, AboutUs, News
+from .views import (
+    Signup,
+    LoginUser,
+    Home,
+    LogoutUser,
+    LandingPage,
+    Datascience,
+    Developers,
+    Testers,
+    ContactUs,
+    AboutUs,
+    News,
+    Ecommerce
+)
 
 
 urlpatterns = [
@@ -12,10 +27,14 @@ urlpatterns = [
     path('contact/', ContactUs, name='ContactUs'),
     path('about/', AboutUs, name='AboutUs'),
     path('testers/', Testers, name='Testers'),
+    path('market/', Ecommerce, name='Ecommerce'),
     path('developers/', Developers, name='Developers'),
     path('datascience/', Datascience, name='Datascience'),
+    path("projectindex/", views.project_index, name="project_index"),
+    path("<int:pk>/", views.project_detail, name="project_detail"),
     path('news/', views.PostList.as_view(), name='News'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
-    path('<slug:slug>/', views.post_detail, name='post_detail')
 
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

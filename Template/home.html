@@ -4,128 +4,192 @@
 
 {% block body %}
 
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Home</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-        <meta name="google" content="notranslate" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous" />
-	</head>
-	<body>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans:400,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage/home.css' %}"/>
+    <title>World News</title>
 
-<!--	navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'LandingPage' %}">Hero</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <span style="color:black; font-size:24px; margin-right:20px; background:cyan; font-weight: bold;">
-                        Hello, {{request.user}}</span>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="{% url 'Signup' %}">Sign Up</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="{% url 'Login' %}">Login</a>
-                        </li>
-                         <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="{% url 'AboutUs' %}">About Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
-			<section id="banner">
-                <img id="manner_img" src="{% static 'images/banner.jpg' %}" alt="My image"/>
-			</section>
 
-			<section id="one" class="wrapper">
-				<div class="inner">
-					<div class="flex flex-3">
-						<article>
-							<header>
-								<h5>Testers</h5>
-							</header>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis eleifend tempus. Phasellus feugiat tortor placerat ultrices volutpat. Aliquam erat nulla, dictum sed sem nec, blandit vestibulum orci. Nam suscipit consectetur erat, varius varius quam pharetra quis. Pellentesque ut mollis nisi. Curabitur et euismod leo.</p>
-						</article>
-						<article>
-							<header>
-								<h5>Developers</h5>
-							</header>
-							<p>Vestibulum et dui sit amet ipsum iaculis dapibus ut eget dolor. In quis metus id ante suscipit varius. Morbi mollis lacinia tellus, sed varius urna faucibus at. Phasellus at interdum mi. Etiam ut nisi ipsum. Pellentesque risus ligula, sollicitudin vitae felis et, rutrum rutrum leo. Ut egestas orci eu ante euismod pharetra. Maecenas ac orci efficitur est luctus consequat</p>
-						</article>
-						<article>
-							<header>
-								<h5>Data Science</h5>
-							</header>
-							<p>Fusce vel tellus libero. Sed felis mauris, placerat sed finibus a, imperdiet ut sapien. Nulla semper, felis rhoncus bibendum blandit, ligula felis rhoncus lorem, nec maximus nibh nibh sit amet risus. In euismod commodo luctus. Donec viverra elementum nisl, nec volutpat dolor. Praesent consectetur nulla nec imperdiet blandit.</p>
-						</article>
-					</div>
-				</div>
-			</section>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg  navbar-light" style="background-color: #DCDCDC">
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-			<section id="two" class="wrapper style1 special">
-				<div class="inner">
-					<header>
-						<h2>TESTIMONIALS</h2>
-						<p>ullam eu lorem sed augue consectetur semper. Aenean pretium nisi vitae consequat porttitor. Aenean porta lectus sed magna laoreet, sed maximus justo pellentesque.</p>
-					</header>
-					<div class="flex flex-4">
-						<div class="box person">
-							<div class="image round">
-								<img src="{% static 'images/pic03.jpg' %}" alt="My image"/>
-							</div>
-							<h3>John Doe</h3>
-							<p>Nullam sit amet elit imperdiet, rutrum sem id, luctus eros. Mauris non nibh eu urna elementum porttitor quis et est. Nunc posuere sit amet dui sit amet laoreet</p>
-						</div>
-						<div class="box person">
-							<div class="image round">
-								<img src="{% static 'images/pic04.jpg' %}" alt="My image"/>
-							</div>
-							<h3>Kofi Kuma</h3>
-							<p>Nunc mollis nisl vitae pellentesque ullamcorper. Suspendisse convallis lorem eu velit tempus malesuada. Vestibulum tincidunt mauris libero, sed molestie eros sollicitudin vitae.</p>
-						</div>
-						<div class="box person">
-							<div class="image round">
-								<img src="{% static 'images/pic05.jpg' %}" alt="My image">
-							</div>
-							<h3>Kwame Jay</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique dui ligula, sit amet sollicitudin enim varius eu. </p>
-						</div>
-						<div class="box person">
-							<div class="image round">
-								<img src="{% static 'images/pic06.jpg' %}" alt="My image"/>
-							</div>
-							<h3>Ab3 Kente</h3>
-							<p> Nullam arcu libero, eleifend in lobortis id, malesuada at orci. Cras dapibus nulla ipsum, et blandit magna rutrum nec. Vivamus feugiat, lectus sit amet volutpat finibus, nisl nisi ornare odio</p>
-						</div>
-					</div>
-				</div>
-			</section>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto navMenu">
+      <li class="nav-item active" id="home">
+        <a class="nav-link" href="{% url 'Home' %}">Hero <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Login' %}">Log In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Signup' %}">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'AboutUs' %}">About Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<footer class="container-fluid text-center">
-  <p>Copyright @ 2020</p>
-</footer>
+  <!--    top image-->
+ <section>
+     <div class="contaimer-max-width" >
+         <img id="newsHead" src="{% static 'images/head.jpg' %}">
+     </div>
+ </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+ <br><br>
 
-	</body>
+<!-- newsfeed-->
+ <section>
+     <div class="container">
+      <h2>What we Offer</h2>
+        <div class="row rowNews" >
+    <div class="col">
+<!--      <img src="/Assert/newsSide.svg" alt="">-->
+        <img src="{% static 'images/newsSid.svg' %}">
+    </div>
+    <div class="col">
+     <p class="text-justify">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+     </p>
+    </div>
+  </div>
 
+    <div class="row rowNews" >
+    <div class="col">
+     <p class="text-justify">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+     </p>
+    </div>
+    <div class="col">
+        <img id="newsSideImg" src="{% static 'images/newsSide1.svg' %}">
+    </div>
+  </div>
+
+     <div class="row rowNews" id="">
+    <div class="col">
+        <img src="{% static 'images/newsSide2.svg' %}">
+    </div>
+    <div class="col">
+       <p class="text-justify">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
+     </p>
+    </div>
+  </div>
+
+     </div>
+ </section>
+
+ <br><br>
+
+<!-- testimonials-->
+ <section>
+    <h2>What our users are saying</h2>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<!-- Carousel indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+	<!-- Wrapper for carousel items -->
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<div class="img-box"><img src="{% static 'images/profile.jpg' %}"></div>
+			<p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
+			<p class="overview"><b>Kofi Kojo</b>Junior Associate at AmaliTech</p>
+			<div class="star-rating">
+				<ul class="list-inline">
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+				</ul>
+			</div>
+		</div>
+		<div class="carousel-item">
+            <div class="img-box"><img src="{% static 'images/pic01.jpg' %}"></div>
+			<p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum idac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+			<p class="overview"><b>Aza Azashwa</b>Media Analyst at Azapaint</p>
+			<div class="star-rating">
+				<ul class="list-inline">
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+				</ul>
+			</div>
+		</div>
+		<div class="carousel-item">
+            <div class="img-box"><img src="{% static 'images/pic02.jpg' %}"></div>
+			<p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit.</p>
+			<p class="overview"><b>Kwasi Ama</b>Web Developer at AmaliTech</p>
+			<div class="star-rating">
+				<ul class="list-inline">
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star"></i></li>
+					<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- Carousel controls -->
+	<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+		<i class="fa fa-angle-left"></i>
+	</a>
+	<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+		<i class="fa fa-angle-right"></i>
+	</a>
+</div>
+
+ </section>
+
+ <blockquote class="blockquote text-center " style="background-color: #A9A9A9; height: 120px">
+
+
+</blockquote>
+
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
 </html>
-
-
-
-
 
 {% endblock %}l>

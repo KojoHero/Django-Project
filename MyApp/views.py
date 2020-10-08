@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm, CommentForm
+from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from .models import Post
+from .models import Post, Project
 from django.views import generic
 
 
@@ -74,6 +74,12 @@ def ContactUs(request):
 
 
 @login_required(login_url='Login')
+def Ecommerce(request):
+    context = {}
+    return render(request, 'ecommerce.html', context)
+
+
+@login_required(login_url='Login')
 def LandingPage(request):
     context = {
     }
@@ -106,6 +112,12 @@ def Datascience(request):
     }
     return render(request, 'datascience.html', context)
 
+@login_required(login_url='Login')
+def News(request):
+    context = {
+    }
+    return render(request, 'news.html', context)
+
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -117,26 +129,17 @@ class PostDetail(generic.DetailView):
     template_name = 'post_detail.html'
 
 
-def post_detail(request, slug):
-    template_name = 'post_detail.html'
-    post = get_object_or_404(Post, slug=slug)
-    comments = post.comments.filter(active=True)
-    new_comment = None
-    # Comment posted
-    if request.method == 'POST':
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
+def project_index(request):
+    projects = Project.objects.all()
+    context = {
+        'projects': projects
+    }
+    return render(request, 'project_index.html', context)
 
-            # Create Comment object but don't save to database yet
-            new_comment = comment_form.save(commit=False)
-            # Assign the current post to the comment
-            new_comment.post = post
-            # Save the comment to the database
-            new_comment.save()
-    else:
-        comment_form = CommentForm()
 
-    return render(request, template_name, {'post': post,
-                                           'comments': comments,
-                                           'new_comment': new_comment,
-                                           'comment_form': comment_form})
+def project_detail(request, pk):
+    project = Project.objects.get(pk=pk)
+    context = {
+        'project': project
+    }
+    return render(request, 'project_detail.html', context)

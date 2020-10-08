@@ -21,19 +21,22 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <span style="color:black; font-size:24px; margin-right:20px; background:cyan; font-weight: bold; padding: 0px;">
-                        Hello, {{request.user}}</span>
+                        <span style="color:black; font-size:24px; margin-right:20px; font-weight: bold; ">
+                        <button>Hello, {{request.user}}</button></span>
                         <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="{% url 'Logout' %}">Logout</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="{% url 'AboutUs' %}">About Us</a>
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'Ecommerce' %}">Market</a>
                         </li>
                          <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'News' %}">Latest news</a>
                         </li>
+                         <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'project_index' %}">Portfolio</a>
+                        </li>
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'ContactUs' %}">Contact Us</a>
+                        </li>
+                        <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'Logout' %}">Logout</a>
                         </li>
                     </ul>
                 </div>
