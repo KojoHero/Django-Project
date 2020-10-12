@@ -26,10 +26,7 @@ urlpatterns = [
     path('landingpage/', LandingPage, name='LandingPage'),
     path('contact/', ContactUs, name='ContactUs'),
     path('about/', AboutUs, name='AboutUs'),
-    path('testers/', Testers, name='Testers'),
     path('market/', Ecommerce, name='Ecommerce'),
-    path('developers/', Developers, name='Developers'),
-    path('datascience/', Datascience, name='Datascience'),
     path("projectindex/", views.project_index, name="project_index"),
     path("<int:pk>/", views.project_detail, name="project_detail"),
     path('news/', views.PostList.as_view(), name='News'),
@@ -37,4 +34,3 @@ urlpatterns = [
 
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

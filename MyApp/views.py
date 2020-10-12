@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from .models import Post, Project
 from django.views import generic
+# from django.views.generic import ListView
 
 
 def Signup(request):
@@ -112,6 +113,7 @@ def Datascience(request):
     }
     return render(request, 'datascience.html', context)
 
+
 @login_required(login_url='Login')
 def News(request):
     context = {
@@ -143,3 +145,4 @@ def project_detail(request, pk):
         'project': project
     }
     return render(request, 'project_detail.html', context)
+

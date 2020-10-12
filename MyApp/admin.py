@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CreateUserForm, Post, Project
+from .models import CreateUserForm, Post
 
 # Register your models here.
 
@@ -13,7 +13,7 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(CreateUserForm)
-admin.site.register(Project)
+# admin.site.register(Project)
 
 
 
