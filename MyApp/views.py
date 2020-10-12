@@ -1,13 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
-# from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-# from django.http import HttpResponse
 from .models import Post, Project
 from django.views import generic
-# from django.views.generic import ListView
+from django.contrib.auth.models import User
 
 
 def Signup(request):
@@ -18,6 +16,7 @@ def Signup(request):
         if request.method == 'POST':
             form = CreateUserForm(request.POST)
             if form.is_valid():
+                User.is_active=False
                 form.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Hello, ' + user + ' your account has been created.')
@@ -52,7 +51,6 @@ def LoginUser(request):
 def LogoutUser(request):
     logout(request)
     return redirect('Login')
-
 
 
 def Home(request):
@@ -145,4 +143,5 @@ def project_detail(request, pk):
         'project': project
     }
     return render(request, 'project_detail.html', context)
+
 
