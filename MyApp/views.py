@@ -3,7 +3,7 @@ from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Post, Project
+from .models import Post
 from django.views import generic
 from django.contrib.auth.models import User
 
@@ -128,20 +128,5 @@ class PostDetail(generic.DetailView):
     model = Post
     template_name = 'post_detail.html'
 
-
-def project_index(request):
-    projects = Project.objects.all()
-    context = {
-        'projects': projects
-    }
-    return render(request, 'project_index.html', context)
-
-
-def project_detail(request, pk):
-    project = Project.objects.get(pk=pk)
-    context = {
-        'project': project
-    }
-    return render(request, 'project_detail.html', context)
 
 

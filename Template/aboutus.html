@@ -12,7 +12,6 @@
 	 <meta name="viewport" content="width=device-width, initial-scale=1" />
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous" />
-
 </head>
 
  		<nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
@@ -24,8 +23,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <span style="color:black; font-size:24px; margin-right:20px; font-weight: bold; ">
-                        <button>Hello, {{request.user}}</button></span>
                          <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'Signup' %}">Sign Up</a>
                         </li>
@@ -36,6 +33,5 @@
                 </div>
             </div>
         </nav>
-
 
 {% endblock %}
