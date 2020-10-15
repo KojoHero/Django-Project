@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{%  include 'main.html' %}
+{% load static %}
+
+{%  include 'status.html' %}
 
 {%block title%} Home {% endblock %}
 
@@ -12,22 +16,23 @@
             crossorigin="anonymous" />
     </head>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: #DCDCDC" id="mainNav">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'LandingPage' %}">Hero</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
+                          <li class="nav-item active" id="img">
+                            <a href="{% url 'LandingPage' %}"><img style="left:20px; position: absolute;" src="{% static 'images/logo.jpg' %}"></a>
+                         </li>
                         <span style="color:black; font-size:24px; margin-right:20px; font-weight: bold; ">
                         <button>Hello, {{request.user}}</button></span>
 <!--                        <li class="nav-item text-black">-->
-<!--                            <a class="nav-link text-black font-weight-bold" href="{% url 'Ecommerce' %}">Market</a>-->
+<!--                            <a class="nav-link text-black font-weight-bold" href="{% url 'Customers' %}">Employees</a>-->
 <!--                        </li>-->
                          <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'News' %}">Latest news</a>
+                        </li>
+                        <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'Index' %}">My Todos</a>
                         </li>
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'Logout' %}">Logout</a>
@@ -38,6 +43,45 @@
         </nav>
 
         <br>
+
+<br>
+
+<!--<div class="row">-->
+<!--	<div class="col-md-5">-->
+<!--		<h5 style="margin-left:20px;">CUSTOMERS:</h5>-->
+<!--		<hr>-->
+<!--		<div class="card card-body">-->
+<!--			<a class="btn btn-primary  btn-sm btn-block" href="">Create Customer</a>-->
+<!--			<table class="table table-sm">-->
+<!--				<tr>-->
+<!--					<th></th>-->
+<!--					<th>Customer</th>-->
+<!--					<th>Orders</th>-->
+<!--				</tr>-->
+
+<!--			</table>-->
+<!--		</div>-->
+<!--	</div>-->
+
+<!--	<div class="col-md-7">-->
+<!--		<h5>LAST 5 ORDERS</h5>-->
+<!--		<hr>-->
+<!--		<div class="card card-body">-->
+<!--			<a class="btn btn-primary  btn-sm btn-block" href="">Create Order</a>-->
+<!--			<table class="table table-sm">-->
+<!--				<tr>-->
+<!--					<th>Product</th>-->
+<!--					<th>Date Ordered</th>-->
+<!--					<th>Status</th>-->
+<!--					<th>Update</th>-->
+<!--					<th>Remove</th>-->
+<!--				</tr>-->
+
+<!--			</table>-->
+<!--		</div>-->
+<!--	</div>-->
+
+<!--</div>-->
 
 
 {% endblock %}l>

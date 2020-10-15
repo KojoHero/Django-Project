@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Post
+from .models import Post, Category, TodoList
 from django.views import generic
-from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def Signup(request):
@@ -16,7 +16,6 @@ def Signup(request):
         if request.method == 'POST':
             form = CreateUserForm(request.POST)
             if form.is_valid():
-                User.is_active=False
                 form.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Hello, ' + user + ' your account has been created.')
@@ -24,7 +23,6 @@ def Signup(request):
         context = {
             'form': form
         }
-
         return render(request, 'signup.html', context)
 
 
@@ -73,9 +71,9 @@ def ContactUs(request):
 
 
 @login_required(login_url='Login')
-def Ecommerce(request):
+def Customers(request):
     context = {}
-    return render(request, 'ecommerce.html', context)
+    return render(request, 'customers.html', context)
 
 
 @login_required(login_url='Login')
@@ -119,6 +117,27 @@ def News(request):
     return render(request, 'news.html', context)
 
 
+@login_required(login_url='Login')
+def Index(request):
+    todos = TodoList.objects.all()
+    categories = Category.objects.all()
+    if request.method == "POST":
+        if "taskAdd" in request.POST:
+            title = request.POST["description"]
+            date = str(request.POST["date"])
+            category = request.POST["category_select"]
+            content = title + " -- " + date + " " + category
+            Todo = TodoList(title=title, content=content, due_date=date, category=Category.objects.get(name=category))
+            Todo.save()
+            return redirect('Index')
+        if "taskDelete" in request.POST:
+            checkedlist = request.POST["checkedbox"]
+            for todo_id in checkedlist:
+                todo = TodoList.objects.get(id=int(todo_id))
+                todo.delete()
+    return render(request, "index.html", {"todos": todos, "categories":categories})
+
+
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'news.html'
@@ -127,6 +146,8 @@ class PostList(generic.ListView):
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'post_detail.html'
+
+
 
 
 

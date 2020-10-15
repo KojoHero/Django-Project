@@ -12,8 +12,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans:400,700">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'homepage/home.css' %}"/>
     <title>World News</title>
 </head>
@@ -26,8 +24,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto navMenu">
-      <li class="nav-item active" id="home">
-        <a class="nav-link" href="{% url 'Home' %}">Hero <span class="sr-only">(current)</span></a>
+         <li class="nav-item active" id="img">
+             <a href="{% url 'Home' %}"><img style="left:5px; position: absolute;" src="{% static 'images/logo.jpg' %}"></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'Login' %}">Log In</a>
@@ -42,7 +40,6 @@
   </div>
 </nav>
 
-  <!--    top image-->
  <section>
      <div class="contaimer-max-width" >
          <img id="newsHead" src="{% static 'images/head.jpg' %}">
@@ -51,17 +48,16 @@
 
  <br><br>
 
-<!-- newsfeed-->
  <section>
      <div class="container">
       <h2>What we Offer</h2>
         <div class="row rowNews" >
     <div class="col">
-<!--      <img src="/Assert/newsSide.svg" alt="">-->
         <img src="{% static 'images/newsSid.svg' %}">
     </div>
     <div class="col">
      <p class="text-justify">
+         <h3><b>News</b></h3>
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
@@ -75,6 +71,7 @@
     <div class="row rowNews" >
     <div class="col">
      <p class="text-justify">
+         <h3><b>Employee Management</b></h3>
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
@@ -94,6 +91,7 @@
     </div>
     <div class="col">
        <p class="text-justify">
+        <h3><b>Your Todos</b></h3>
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu tincidunt felis. Maecenas mattis.

@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
 from django.urls import path
 from . import views
 from .views import (
@@ -12,7 +13,8 @@ from .views import (
     ContactUs,
     AboutUs,
     News,
-    Ecommerce
+    Customers,
+    Index
 )
 
 
@@ -22,9 +24,10 @@ urlpatterns = [
     path('logout/', LogoutUser, name="Logout"),
     path('', Home, name="Home"),
     path('landingpage/', LandingPage, name='LandingPage'),
+    path('todo/', Index, name='Index'),
     path('contact/', ContactUs, name='ContactUs'),
     path('about/', AboutUs, name='AboutUs'),
-    path('market/', Ecommerce, name='Ecommerce'),
+    path('customers/', Customers, name='Customers'),
     path('reset_password/',
          auth_views.PasswordResetView.as_view(template_name="password_reset.html"),
          name='reset_password'),
