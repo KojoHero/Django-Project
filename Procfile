@@ -1,0 +1,1 @@
+web: gunicorn Hero.wsgi --log-file -
