@@ -6,11 +6,35 @@
   {% load static %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" type="text/css" href="{% static 'style4.css' %}">
+   <link rel="stylesheet" type="text/css" href="{% static 'css3/style4.css' %}">
 </head>
+
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: #DCDCDC" id="mainNav">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                          <li class="nav-item active" id="img">
+                            <a href="{% url 'LandingPage' %}"><img style="left:20px; position: absolute;" src="{% static 'images/logo.jpg' %}"></a>
+                         </li>
+                        <button style="color:black; font-size:24px; margin-right:20px; height: inherit; ">Hello, {{request.user}}</button>
+                        </li>
+                         <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'News' %}">Latest news</a>
+                        </li>
+                        <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'Logout' %}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+</header>
+
 <body>
 <div django-app="TaskManager">
-    <div class="container">
+    <div class="container" >
             <div class="content">
             <h1>My Activities</h1>
             <p class="tagline">Hero Todo</p>

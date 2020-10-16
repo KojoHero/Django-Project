@@ -9,17 +9,15 @@ html {
     font-size: 100%;
 }
 body {
-    background: #DCDCDC;
+    background: #E6E6FA;
     font-family: 'Open Sans',sans-serif;
 }
 /* super basic grid structure */
 .container {
     width: 600px;
     margin: 0 auto;
-    background: #ffffff;
+    background: #E6E6FA;
     padding: 20px 0;
-    -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.2);
-            box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 .row {
     display: block;
@@ -133,20 +131,14 @@ input:focus::-moz-input-placeholder {
 }
 button {
     font-family: 'Open Sans', sans-serif;
-    background: transparent;
     border-radius: 2px;
-    border: none;
     outline: none;
     height: 50px;
-    font-size: 14px;
-    color: #fff;
     cursor: pointer;
-    text-transform: uppercase;
     position: relative;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-    padding-left: 30px;
-    padding-right: 15px;
+
 }
 .icon {
     position: absolute;
@@ -222,16 +214,16 @@ button {
     background: transparent;
 }
 .category-Personal {
-    background: #2980b9;
+    background: #006400;
 }
 .category-Work {
-    background: #8e44ad;
+    background: #4B0082;
 }
-.category-School {
-    background: #f39c12;
+.category-General {
+    background: #DAA520;
 }
 .category-Other {
-    background: #d35400;
+    background: #ADFF2F;
 }
 footer {
     text-align: center;
